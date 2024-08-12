@@ -70,7 +70,12 @@ Run the tests:
 ```shell
 python -m unittest discover -s peepapp_core -p "test_*.py"
 ```
+---
+## Working Flow diagram
+
+![FLOWDIAG!](https://raw.githubusercontent.com/oatkrs/peepapp-core/main/d2.png)
 
 ---
+
 
 Dive in, and let's make app security and user privacy a breeze! 🛡️
