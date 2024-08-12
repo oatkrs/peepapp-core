@@ -1,0 +1,221 @@
+direction: down
+
+APK: {
+    label: "APK file"
+    shape: rectangle
+    style: {
+        fill: "#b3cde0"
+        stroke: "#03396c"
+        stroke-width: 2
+    }
+}
+UNZIP: {
+    label: "unarchive"
+    shape: rectangle
+    style: {
+        fill: "#f7cac9"
+        stroke: "#f7786b"
+        stroke-width: 2
+    }
+}
+DEX: {
+    label: "dex files"
+    shape: rectangle
+    style: {
+        fill: "#f7cac9"
+        stroke: "#f7786b"
+        stroke-width: 2
+    }
+}
+DEXDUMP: {
+    label: "dexdump"
+    shape: rectangle
+    style: {
+        fill: "#ffef96"
+        stroke: "#ffcc5c"
+        stroke-width: 2
+    }
+}
+TRACKER_SIG: {
+    label: "trackers signatures"
+    shape: rectangle
+    style: {
+        fill: "#ffef96"
+        stroke: "#ffcc5c"
+        stroke-width: 2
+    }
+}
+TRACKER_DB: {
+    label: "TrackerDB"
+    shape: rectangle
+    style: {
+        fill: "#ffef96"
+        stroke: "#ffcc5c"
+        stroke-width: 2
+    }
+}
+JAVA_CLASSES: {
+    label: "Java classes"
+    shape: rectangle
+    style: {
+        fill: "#c5e384"
+        stroke: "#379634"
+        stroke-width: 2
+    }
+}
+MATCH: {
+    label: "match"
+    shape: rectangle
+    style: {
+        fill: "#c5e384"
+        stroke: "#379634"
+        stroke-width: 2
+    }
+}
+EMBEDDED: {
+    label: "embedded trackers"
+    shape: rectangle
+    style: {
+        fill: "#c5e384"
+        stroke: "#379634"
+        stroke-width: 2
+    }
+}
+REPORT_GEN: {
+    label: "Report generation"
+    shape: rectangle
+    style: {
+        fill: "#b3cde0"
+        stroke: "#03396c"
+        stroke-width: 2
+    }
+}
+METADATA_COLLECTION: {
+    label: "Metadata collection"
+    shape: rectangle
+    style: {
+        fill: "#b3cde0"
+        stroke: "#03396c"
+        stroke-width: 2
+    }
+}
+
+CORELIB: {
+    label: "CoreLib"
+    shape: rectangle
+    style: {
+        fill: "#cfe2f3"
+        stroke: "#0b5394"
+        stroke-width: 2
+    }
+}
+APK_SIG_CLASS: {
+    label: "ApkSignature Class"
+    shape: rectangle
+    style: {
+        fill: "#cfe2f3"
+        stroke: "#0b5394"
+        stroke-width: 2
+    }
+}
+STATIC_ANALYSIS_CLASS: {
+    label: "StaticAnalysis Class"
+    shape: rectangle
+    style: {
+        fill: "#cfe2f3"
+        stroke: "#0b5394"
+        stroke-width: 2
+    }
+}
+DEXDUMP_INTEGRATION: {
+    label: "Dexdump integration feature"
+    shape: rectangle
+    style: {
+        fill: "#ffef96"
+        stroke: "#ffcc5c"
+        stroke-width: 2
+    }
+}
+CERTIFICATE_CLASS: {
+    label: "Certificate Class"
+    shape: rectangle
+    style: {
+        fill: "#cfe2f3"
+        stroke: "#0b5394"
+        stroke-width: 2
+    }
+}
+RSAKEYINFO_CLASS: {
+    label: "RSAKeyInfo Class"
+    shape: rectangle
+    style: {
+        fill: "#cfe2f3"
+        stroke: "#0b5394"
+        stroke-width: 2
+    }
+}
+PEEPAPP_CONNECTOR: {
+    label: "peepappConnector Class"
+    shape: rectangle
+    style: {
+        fill: "#cfe2f3"
+        stroke: "#0b5394"
+        stroke-width: 2
+    }
+}
+DSAKEYINFO_CLASS: {
+    label: "DSAKeyInfo Class"
+    shape: rectangle
+    style: {
+        fill: "#cfe2f3"
+        stroke: "#0b5394"
+        stroke-width: 2
+    }
+}
+TEST_PEEPAPP_CLASS: {
+    label: "TestPeepapp Class"
+    shape: rectangle
+    style: {
+        fill: "#cfe2f3"
+        stroke: "#0b5394"
+        stroke-width: 2
+    }
+}
+TESTING: {
+    label: "Testing purposes"
+    shape: rectangle
+    style: {
+        fill: "#b3cde0"
+        stroke: "#03396c"
+        stroke-width: 2
+    }
+}
+EXPOSED_API: {
+    label: "Exposed local API to interact with the Library"
+    shape: rectangle
+    style: {
+        fill: "#f7cac9"
+        stroke: "#f7786b"
+        stroke-width: 2
+    }
+}
+
+APK -> UNZIP
+UNZIP -> DEX
+DEX -> DEXDUMP_INTEGRATION -> DEXDUMP
+DEX -> TRACKER_SIG
+CORELIB -> TRACKER_DB -> TRACKER_SIG
+DEXDUMP -> JAVA_CLASSES
+JAVA_CLASSES -> MATCH
+TRACKER_SIG -> MATCH
+MATCH -> EMBEDDED
+EMBEDDED -> REPORT_GEN
+
+CORELIB -> APK_SIG_CLASS -> METADATA_COLLECTION
+CORELIB -> STATIC_ANALYSIS_CLASS -> DEXDUMP_INTEGRATION
+CORELIB -> CERTIFICATE_CLASS -> METADATA_COLLECTION
+CORELIB -> RSAKEYINFO_CLASS -> METADATA_COLLECTION
+CORELIB -> PEEPAPP_CONNECTOR -> EXPOSED_API
+CORELIB -> DSAKEYINFO_CLASS -> METADATA_COLLECTION
+CORELIB -> TEST_PEEPAPP_CLASS -> TESTING
+METADATA_COLLECTION -> REPORT_GEN
