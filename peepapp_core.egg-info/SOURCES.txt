@@ -1,6 +1,6 @@
-LICENSE
 LICENSE:Zone.Identifier
 README.md
+pyproject.toml
 setup.py
 peepapp_core/__init__.py
 peepapp_core.egg-info/PKG-INFO

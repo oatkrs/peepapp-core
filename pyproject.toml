@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "peepapp-core"
-version = "0.1.0"
+version = "0.1.1"
 description = "Core library for PeepApp, a SAST tool for analyzing Android apps and enumerating trackers and permissions."
 authors = [
     { name = "oatkrs", email = "utkarshparashar05@example.com" }

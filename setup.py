@@ -3,7 +3,7 @@
 import sys
 
 from setuptools import setup, find_packages
-
+from pathlib import Path
 
 if sys.version_info.major == 3 and sys.version_info.minor < 3:
     print("Unfortunately, your python version is not supported!\n Please upgrade at least to python 3.3!")
@@ -12,6 +12,9 @@ if sys.version_info.major == 3 and sys.version_info.minor < 3:
 if sys.platform == 'darwin' or sys.platform == 'win32':
     print("Unfortunately, we do not support your platform %s" % sys.platform)
     sys.exit(1)
+
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
 
 install_requires = [
     'androguard==4.1.1',
@@ -26,7 +29,7 @@ install_requires = [
 
 setup(
     name='peepapp_core',
-    version='0.1.0',
+    version='0.1.1',
     description='Core functionality for PeepApp',
     author='Utkarsh',
     author_email='utkarshparashar05@gmail.com',
