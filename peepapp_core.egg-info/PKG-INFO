@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: peepapp_core
+Version: 0.1.0
+Summary: Core functionality for PeepApp
+Home-page: https://github.com/oatkrs/peepapp-core
+Author: Utkarsh
+Author-email: utkarshparashar05@gmail.com
+License-File: LICENSE
+License-File: LICENSE:Zone.Identifier
+Requires-Dist: androguard==4.1.1
+Requires-Dist: cryptography==42.0.4
+Requires-Dist: dhash==1.4
+Requires-Dist: jellyfish==0.5.6
+Requires-Dist: Pillow==10.3.0
+Requires-Dist: requests<2.33,>=2.26
+Requires-Dist: six==1.15.0
+Requires-Dist: traitlets==4.3.2
